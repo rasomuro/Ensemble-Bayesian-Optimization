@@ -67,8 +67,9 @@ class PushReward:
 
 
 def main():
-    f = PushReward()
-    x = np.random.uniform(f.xmin, f.xmax)
+    import sys
+    f = PushReward(display=True)
+    x = [float(s) for s in sys.argv[1:]] if len(sys.argv) == 15 else np.random.uniform(f.xmin, f.xmax)
     print('Input = {}'.format(x))
     print('Output = {}'.format(f(x)))
 
