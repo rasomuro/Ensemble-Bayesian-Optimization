@@ -4,7 +4,7 @@ import numpy as np
 
 
 class PushReward:
-    def __init__(self):
+    def __init__(self, display=False):
 
         # domain of this function
         self.xmin = [-5., -5., -10., -10., 2., 0., -5., -5., -10., -10., 2., 0., -5., -5.]
@@ -17,6 +17,8 @@ class PushReward:
         self.gxy = [4, 3.5]
         self.gxy2 = [-4, 3.5]
 
+        self.display = display
+
     @property
     def f_max(self):
         # maximum value of this function
@@ -25,7 +27,7 @@ class PushReward:
     @property
     def dx(self):
         # dimension of the input
-        return self._dx
+        return len(self.xmin)
     
     def __call__(self, argv):
         # returns the reward of pushing two objects with two robots
@@ -46,7 +48,7 @@ class PushReward:
         
         initial_dist = self.f_max
 
-        world = b2WorldInterface(True)
+        world = b2WorldInterface(self.display)
         oshape, osize, ofriction, odensity, bfriction, hand_shape, hand_size = \
             'circle', 1, 0.01, 0.05, 0.01, 'rectangle', (1, 0.3)
 

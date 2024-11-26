@@ -85,7 +85,7 @@ class b2WorldInterface:
         self.world.Step(self.TIME_STEP, self.VEL_ITERS, self.POS_ITERS)
         if show_display and self.do_gui:
             self.gui_world.draw(self.bodies)
-
+        self.b = self.bodies[0].fixtures[0].shape.valid # Refer to any shape member to save it from GC - possible reference count missing?
 
 class end_effector:
     def __init__(self, b2world_interface, init_pos, base, init_angle, hand_shape='rectangle', hand_size=(0.3, 1)):

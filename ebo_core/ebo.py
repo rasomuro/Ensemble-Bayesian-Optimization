@@ -122,7 +122,7 @@ class ebo(object):
             candidates = all_candidates[:jnext]
 
             assert len(candidates) > 0, 'B > number of selections?'
-            maxlogdet = -np.float('inf')
+            maxlogdet = -float('inf')
             jbest = -1
             curX = newX[good_inds[:next_ind]]
 

@@ -4,9 +4,10 @@ import scipy.cluster.hierarchy as hi
 
 
 def sample_multinomial(prob, shape, dim_limit):
-    assert isinstance(shape, int)
+    # assert isinstance(shape, int)
+    shape = int(shape)
     prob = prob / np.sum(prob)
-    ret = - np.ones(shape, dtype=np.int)
+    ret = - np.ones(shape, dtype=int)
     for i in range(shape):
         cnt = 0
         while cnt < 100:
