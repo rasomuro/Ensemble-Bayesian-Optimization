@@ -28,3 +28,7 @@ We provide 3 examples of black-box functions:
 
 ## Caveats on the hyperparameters of EBO
  From more extensive experiments we found that EBO is not be robust to the hyperparameters of the Mondrian trees including the size of each leaf (min_leaf_size), number of leaves (max_n_leaves), selections per partition (n_bo), etc. Principled ways of setting those parameters remain a future work. 
+
+## Linux
+libbox2d-dev
+git@github.com:jonasschneider/box2d-py.git
